@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "nutrition-scraper"
-version = "0.1.0"
+version = "1.0.0"
 description = "A polite web scraper that collects wellness and fitness friendly foods from nutritionvalue.org into a CSV file."
 readme = "README.md"
 requires-python = ">=3.14"
