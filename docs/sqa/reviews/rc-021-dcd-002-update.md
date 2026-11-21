@@ -11,7 +11,7 @@
 
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-11-21 | Accepted | S01 | S01 | Review of the update that adds SiteRulesError and foods_read | pending |
+| 2026-11-21 | Accepted | S01 | S01 | Review of the update that adds SiteRulesError and foods_read | [83847b9] |
 
 ---
 
@@ -50,3 +50,4 @@ Go
 
 [DCD-002]: ../../dcd.md
 [QC-DCD-001]: ../../../framework/qc/artifacts/qc-dcd.md
+[83847b9]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/093-assignment-custom-web-scraper/commit/83847b9092ab5c692b6ab3a3c1c243038e0207a3

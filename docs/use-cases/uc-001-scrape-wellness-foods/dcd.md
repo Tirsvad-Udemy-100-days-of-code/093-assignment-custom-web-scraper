@@ -12,7 +12,7 @@
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
 | 2026-11-21 | Accepted | S01 | S01 | Accepted after review RC-017 Go; stand-in review, not independent | [d5d3287] |
-| 2026-11-21 | Accepted | S01 | S01 | Adds SiteRulesError and foods_read found while building MIL-005; review RC-020 Go, stand-in, not independent | pending |
+| 2026-11-21 | Accepted | S01 | S01 | Adds SiteRulesError and foods_read found while building MIL-005; review RC-020 Go, stand-in, not independent | [83847b9] |
 
 ---
 
@@ -161,3 +161,4 @@ csv_writer ..> Food
 [ADR-0002]: ../../adr/adr-0002-wellness-thresholds.md
 [DCD-002]: ../../dcd.md
 [d5d3287]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/093-assignment-custom-web-scraper/commit/d5d328712110d0af9ce8e36a84913faaf3e35d0b
+[83847b9]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/093-assignment-custom-web-scraper/commit/83847b9092ab5c692b6ab3a3c1c243038e0207a3

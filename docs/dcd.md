@@ -12,7 +12,7 @@
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
 | 2026-11-21 | Accepted | S01 | S01 | Accepted after review RC-019 Go; stand-in review, not independent | [b428560] |
-| 2026-11-21 | Accepted | S01 | S01 | Adds SiteRulesError and foods_read found while building MIL-005; review RC-021 Go, stand-in, not independent | pending |
+| 2026-11-21 | Accepted | S01 | S01 | Adds SiteRulesError and foods_read found while building MIL-005; review RC-021 Go, stand-in, not independent | [83847b9] |
 
 ---
 
@@ -161,3 +161,4 @@ csv_writer ..> Food
 [OC-001]: use-cases/uc-001-scrape-wellness-foods/oc.md
 [UC-001]: use-cases/uc-001-scrape-wellness-foods/uc.md
 [b428560]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/093-assignment-custom-web-scraper/commit/b428560f5990f764f9eedcb41f3ec4d3abbaca99
+[83847b9]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/093-assignment-custom-web-scraper/commit/83847b9092ab5c692b6ab3a3c1c243038e0207a3
