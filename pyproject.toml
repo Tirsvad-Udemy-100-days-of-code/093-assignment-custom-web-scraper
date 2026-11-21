@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nutrition-scraper"
+version = "0.1.0"
+description = "A polite web scraper that collects wellness and fitness friendly foods from nutritionvalue.org into a CSV file."
+readme = "README.md"
+requires-python = ">=3.14"
+license = "AGPL-3.0-or-later"
+authors = [{ name = "Jens Tirsvad Nielsen" }]
+keywords = ["web-scraping", "csv", "nutrition", "wellness", "100-days-of-code"]
+classifiers = [
+    "Programming Language :: Python :: 3.14",
+    "Framework :: Pytest",
+    "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
+]
+# No runtime dependencies: the scraper uses urllib, html.parser and csv from the standard library.
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3",
+    "pytest-cov>=6",
+    "ruff>=0.8",
+]
+
+[project.scripts]
+nutrition-scraper = "nutrition_scraper.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src", "tests"]
+testpaths = ["tests"]
+addopts = "--import-mode=importlib"
+
+[tool.ruff]
+line-length = 120
+target-version = "py314"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "B", "A", "UP"]
