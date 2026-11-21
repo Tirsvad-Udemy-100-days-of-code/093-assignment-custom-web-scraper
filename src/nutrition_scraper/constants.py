@@ -65,6 +65,31 @@ TAG_HIGH_PROTEIN: str = "high-protein"
 TAG_HIGH_FIBRE: str = "high-fibre"
 TAG_LOW_CALORIE: str = "low-calorie"
 
+## HTTP status codes after which a request is worth repeating: too many requests and temporary server errors.
+RETRY_STATUS_CODES: tuple[int, ...] = (429, 500, 502, 503, 504)
+
+## Character set used to read a page when the server does not name one.
+DEFAULT_CHARSET: str = "utf-8"
+
+## Nutrient rows of a food page. The key is the name the page uses; the value is the Food field and the unit of
+## that field. A value the page gives in another unit is converted.
+NUTRIENT_ROWS: dict[str, tuple[str, str]] = {
+    "Protein": ("protein_g", "g"),
+    "Carbohydrate": ("carbohydrate_g", "g"),
+    "Fiber": ("fibre_g", "g"),
+    "Sugars": ("sugars_g", "g"),
+    "Fat": ("fat_g", "g"),
+    "Saturated fatty acids": ("saturated_fat_g", "g"),
+    "Sodium": ("sodium_mg", "mg"),
+    "Potassium": ("potassium_mg", "mg"),
+    "Calcium": ("calcium_mg", "mg"),
+    "Iron": ("iron_mg", "mg"),
+    "Vitamin C": ("vitamin_c_mg", "mg"),
+}
+
+## How many of a unit make one gram, so a value can be converted to the unit of its Food field.
+UNIT_PER_GRAM: dict[str, float] = {"g": 1.0, "mg": 1_000.0, "mcg": 1_000_000.0}
+
 ## Where the CSV is written unless the user chooses another file.
 DEFAULT_OUTPUT_PATH: str = "data/wellness_foods.csv"
 
