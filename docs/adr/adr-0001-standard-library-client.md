@@ -11,8 +11,8 @@
 
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-11-21 | Proposed | S01 | S01 | First edition | pending |
-| 2026-11-21 | Accepted | S01 | S01 | Accepted after review RC-011 Go; stand-in review, not independent | pending |
+| 2026-11-21 | Proposed | S01 | S01 | First edition | [2f482f5] |
+| 2026-11-21 | Accepted | S01 | S01 | Accepted after review RC-011 Go; stand-in review, not independent | [2f482f5] |
 
 ---
 
@@ -62,3 +62,4 @@ Negative:
 [BC-001]: ../business-case.md
 [UC-001]: ../use-cases/uc-001-scrape-wellness-foods/uc.md
 [DCD-001]: ../use-cases/uc-001-scrape-wellness-foods/dcd.md
+[2f482f5]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/093-assignment-custom-web-scraper/commit/2f482f5390248b63768bfea82809517c324907cf

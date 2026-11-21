@@ -11,8 +11,8 @@
 
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-11-21 | Proposed | S01 | S01 | First edition: adds the design of DCD-001 (UC-001) | pending |
-| 2026-11-21 | Accepted | S01 | S01 | Accepted after review RC-019 Go; stand-in review, not independent | pending |
+| 2026-11-21 | Proposed | S01 | S01 | First edition: adds the design of DCD-001 (UC-001) | [b428560] |
+| 2026-11-21 | Accepted | S01 | S01 | Accepted after review RC-019 Go; stand-in review, not independent | [b428560] |
 
 ---
 
@@ -154,3 +154,4 @@ csv_writer ..> Food
 [SD-001]: use-cases/uc-001-scrape-wellness-foods/sd.md
 [OC-001]: use-cases/uc-001-scrape-wellness-foods/oc.md
 [UC-001]: use-cases/uc-001-scrape-wellness-foods/uc.md
+[b428560]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/093-assignment-custom-web-scraper/commit/b428560f5990f764f9eedcb41f3ec4d3abbaca99

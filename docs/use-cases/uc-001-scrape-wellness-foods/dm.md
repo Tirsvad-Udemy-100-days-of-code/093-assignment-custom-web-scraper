@@ -13,8 +13,8 @@
 
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-11-21 | Proposed | S01 | S01 | First edition | pending |
-| 2026-11-21 | Accepted | S01 | S01 | Accepted after review RC-013 Go; stand-in review, not independent | pending |
+| 2026-11-21 | Proposed | S01 | S01 | First edition | [d5d3287] |
+| 2026-11-21 | Accepted | S01 | S01 | Accepted after review RC-013 Go; stand-in review, not independent | [d5d3287] |
 
 ---
 
@@ -91,3 +91,4 @@ WellnessList "1" *-- "0..*" Food : keeps >
 [UC-001]: uc.md
 [SSD-001]: ssd.md
 [DM-002]: ../../domain-model.md
+[d5d3287]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/093-assignment-custom-web-scraper/commit/d5d328712110d0af9ce8e36a84913faaf3e35d0b

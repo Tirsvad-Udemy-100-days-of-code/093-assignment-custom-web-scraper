@@ -13,8 +13,8 @@
 
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-11-21 | Proposed | S01 | S01 | First edition | pending |
-| 2026-11-21 | Accepted | S01 | S01 | Accepted after review RC-010 Go; stand-in review, not independent | pending |
+| 2026-11-21 | Proposed | S01 | S01 | First edition | [46d1ed3] |
+| 2026-11-21 | Accepted | S01 | S01 | Accepted after review RC-010 Go; stand-in review, not independent | [46d1ed3] |
 
 ---
 
@@ -95,3 +95,4 @@ No step includes or extends another use case; UC-001 is the only use case.
 [MIL-003]: ../../milestones/mil-003-design.md
 [DM-001]: dm.md
 [SSD-001]: ssd.md
+[46d1ed3]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/093-assignment-custom-web-scraper/commit/46d1ed381461c8a4f543e32ba93038039c1dac4b
