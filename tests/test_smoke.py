@@ -8,7 +8,7 @@ from nutrition_scraper import constants
 
 
 def test_package_has_a_version() -> None:
-    assert nutrition_scraper.__version__ == "0.1.0"
+    assert nutrition_scraper.__version__ == "1.0.0"
 
 
 def test_delay_is_at_least_twice_the_crawl_delay_of_the_site() -> None:
