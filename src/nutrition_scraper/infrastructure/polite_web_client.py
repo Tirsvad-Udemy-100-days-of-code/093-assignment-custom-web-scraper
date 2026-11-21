@@ -10,7 +10,7 @@ from collections.abc import Callable
 from http import HTTPStatus
 from urllib.parse import urljoin
 
-from nutrition_scraper.application.food_source import SourceError
+from nutrition_scraper.application.food_source import SiteRulesError, SourceError
 from nutrition_scraper.constants import (
     BASE_URL,
     MAX_RETRIES,
@@ -98,7 +98,7 @@ class PoliteWebClient:
         """!
         @brief Read robots.txt once, on the first request.
         @return The parsed rules.
-        @throws SourceError When the site cannot give its rules because of a server error or no answer.
+        @throws SiteRulesError When the site cannot give its rules because of a server error or no answer.
         """
         if self._robots is not None:
             return self._robots
@@ -106,14 +106,14 @@ class PoliteWebClient:
         try:
             response = self._transport.get(self._base_url + ROBOTS_PATH, self._headers(), self._timeout_seconds)
         except TransportError as error:
-            raise SourceError(f"The rules of the site could not be read: {error}") from error
+            raise SiteRulesError(f"The rules of the site could not be read: {error}") from error
         robots = urllib.robotparser.RobotFileParser()
         if response.status == HTTPStatus.OK:
             robots.parse(response.body.splitlines())
         elif HTTPStatus.BAD_REQUEST <= response.status < HTTPStatus.INTERNAL_SERVER_ERROR:
             robots.parse([])  # no robots.txt: everything is allowed (RFC 9309)
         else:
-            raise SourceError(f"The rules of the site could not be read: status {response.status}")
+            raise SiteRulesError(f"The rules of the site could not be read: status {response.status}")
         self._robots = robots
         return robots
 
