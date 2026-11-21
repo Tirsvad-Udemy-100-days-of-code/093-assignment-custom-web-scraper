@@ -13,8 +13,8 @@
 
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-11-21 | Proposed | S01 | S01 | First edition | pending |
-| 2026-11-21 | Accepted | S01 | S01 | Accepted by S01 in chat on 2026-11-21; review RC-004 Go, stand-in, not independent | pending |
+| 2026-11-21 | Proposed | S01 | S01 | First edition | [06512d9] |
+| 2026-11-21 | Accepted | S01 | S01 | Accepted by S01 in chat on 2026-11-21; review RC-004 Go, stand-in, not independent | [06512d9] |
 
 ---
 
@@ -67,3 +67,4 @@ One branch `milestone/mil-001-baseline` and one pull request that closes the iss
 [BC-001]: ../business-case.md
 [SA-001]: ../stakeholder-analysis.md
 [PP-001]: ../project-plan.md
+[06512d9]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/093-assignment-custom-web-scraper/commit/06512d9089fccc9f33f90b9cdce559fe9d1d7411

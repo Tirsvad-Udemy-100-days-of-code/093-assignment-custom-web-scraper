@@ -13,8 +13,8 @@
 
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-11-21 | Proposed | S01 | S01 | First edition: six milestones, one branch and pull request each | pending |
-| 2026-11-21 | Accepted | S01 | S01 | Accepted by S01 in chat on 2026-11-21; review RC-003 Go, stand-in, not independent | pending |
+| 2026-11-21 | Proposed | S01 | S01 | First edition: six milestones, one branch and pull request each | [06512d9] |
+| 2026-11-21 | Accepted | S01 | S01 | Accepted by S01 in chat on 2026-11-21; review RC-003 Go, stand-in, not independent | [06512d9] |
 
 ---
 
@@ -118,3 +118,4 @@ None. OI-1 (prompt log) was closed on 2026-11-21: S01 accepted the plan with the
 [MIL-004]: ./milestones/mil-004-scraper.md
 [MIL-005]: ./milestones/mil-005-wellness-csv.md
 [MIL-006]: ./milestones/mil-006-release.md
+[06512d9]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/093-assignment-custom-web-scraper/commit/06512d9089fccc9f33f90b9cdce559fe9d1d7411
