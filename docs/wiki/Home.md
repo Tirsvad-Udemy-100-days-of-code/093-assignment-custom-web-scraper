@@ -12,3 +12,4 @@ Day 93 assignment of the course *100 Days of Code: The Complete Python Pro Bootc
 | [Step 3: Design](Step-3-Design) | What this build step did and what it taught, with a screenshot |
 | [Step 4: Scraper](Step-4-Scraper) | What this build step did and what it taught, with a screenshot |
 | [Step 5: Wellness CSV](Step-5-Wellness-CSV) | What this build step did and what it taught, with a screenshot |
+| [Reflection](Reflection) | Read the journal: how the project was approached, what was hard and easy, and the biggest lesson |

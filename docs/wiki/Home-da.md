@@ -12,3 +12,4 @@ Dag 93-opgaven fra kurset *100 Days of Code: The Complete Python Pro Bootcamp*. 
 | [Trin 3: Design](Step-3-Design-da) | Hvad dette byggetrin gjorde, og hvad det lærte os, med et skærmbillede |
 | [Trin 4: Skraber](Step-4-Scraper-da) | Hvad dette byggetrin gjorde, og hvad det lærte os, med et skærmbillede |
 | [Trin 5: Velfærds-CSV](Step-5-Wellness-CSV-da) | Hvad dette byggetrin gjorde, og hvad det lærte os, med et skærmbillede |
+| [Refleksion](Reflection-da) | Læse journalen: hvordan projektet blev grebet an, hvad der var svært og let, og den største lærdom |

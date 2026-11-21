@@ -12,3 +12,4 @@ Tugasan Hari 93 kursus *100 Days of Code: The Complete Python Pro Bootcamp*. Pen
 | [Langkah 3: Reka bentuk](Step-3-Design-ms) | Apa yang dilakukan langkah binaan ini dan apa yang dipelajari, dengan tangkapan skrin |
 | [Langkah 4: Pengikis](Step-4-Scraper-ms) | Apa yang dilakukan langkah binaan ini dan apa yang dipelajari, dengan tangkapan skrin |
 | [Langkah 5: CSV kesihatan](Step-5-Wellness-CSV-ms) | Apa yang dilakukan langkah binaan ini dan apa yang dipelajari, dengan tangkapan skrin |
+| [Refleksi](Reflection-ms) | Baca jurnal: bagaimana projek didekati, apa yang sukar dan mudah, dan pelajaran terbesar |
