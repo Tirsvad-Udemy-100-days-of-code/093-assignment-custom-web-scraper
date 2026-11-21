@@ -1,0 +1,71 @@
+# Stakeholder Analysis: Nutrition Wellness Scraper
+
+## Metadata
+
+| Key | Value |
+| --- | --- |
+| ID | SA-001 |
+| CrossReference | [BC-001] |
+| Language | en |
+| Domain | it |
+
+## Version History
+
+| Date | Status | Author | Reviewer | Change | Commit |
+| --- | --- | --- | --- | --- | --- |
+| 2026-11-21 | Proposed | S01 | S01 | First edition | [06512d9] |
+| 2026-11-21 | Accepted | S01 | S01 | Accepted by S01 in chat on 2026-11-21; review RC-002 Go, stand-in, not independent | [06512d9] |
+
+---
+
+## Stakeholders
+
+| ID | Stakeholder | Role and context | Power | Interest | Strategy |
+| --- | --- | --- | --- | --- | --- |
+| S01 | Course participant | Product Owner, developer and reviewer of every artifact; owns the repository | High | High | Manage Closely |
+| S02 | Udemy coursists | Fellow students who share code and compare solutions to Day 93 | Low | High | Keep Informed |
+| S03 | GitHub and Gitea viewers | People who browse the repository for ideas | Low | Low | Monitor |
+| S04 | nutritionvalue.org | The site that is scraped; it sets the rules in `robots.txt` and its terms | High | Low | Keep Satisfied |
+
+## Power/Interest Grid
+
+| | Low interest | High interest |
+| --- | --- | --- |
+| **High power** | S04 | S01 |
+| **Low power** | S03 | S02 |
+
+## Concern Register
+
+| ID | Raised by | Concern (business language) | Quality characteristic (ISO/IEC 25010) | Business Case objective |
+| --- | --- | --- | --- | --- |
+| CN-001 | S01 | The assignment works end to end and is finished within the course time | Functional Suitability | OBJ-1 |
+| CN-002 | S01 | The work practises scraping: fetching, parsing and saving a CSV | Functional Suitability | OBJ-2 |
+| CN-003 | S02 | Code is readable and runnable, with function names that match the assignment's words (fetch, parse, scrape, save) | Maintainability, Interaction Capability | OBJ-3, OBJ-4 |
+| CN-004 | S02 | The CSV is useful for wellness and fitness: foods with protein, fibre, calories and sodium per 100 g | Functional Suitability | OBJ-1 |
+| CN-005 | S03 | The repository has a clear description, topics and README, and no runtime dependencies | Interaction Capability, Flexibility | OBJ-3, OBJ-4 |
+| CN-006 | S01 | Personal tokens in `.env` never reach the repository | Security | OBJ-5 |
+| CN-007 | S01 | Each step is documented with a screenshot and what was learned, in en, da and ms | Interaction Capability | OBJ-4 |
+| CN-008 | S04 | The site is not overloaded and its rules are followed: `robots.txt`, a delay, no republishing | Reliability, Security | OBJ-5 |
+
+## Conflicts and Resolutions
+
+| Conflict | Between | Resolution |
+| --- | --- | --- |
+| Few runtime dependencies (CN-005) against ease of HTML parsing (CN-003) | S03, S02 | Use `html.parser` from the standard library; no runtime dependency (BC-001 AS-1, SC-5) |
+| A CSV to look at in the repository (CN-004) against the site's rule not to republish (CN-008) | S02, S04 | The CSV is created locally and is not committed; screenshots show the run and the columns, not the data (BC-001 AS-7) |
+| Full review workflow of the framework against the 120-minute course budget (CN-001) | S01 with itself | One use case, lean artifacts; documents are short and reviewed once per milestone |
+| Readers in three languages (CN-007) against time (CN-001) | S01, S02 | English is authoritative and written first; da and ms follow page by page in the same milestone, kept short |
+
+## Communication Plan
+
+| Stakeholder | Channel | Frequency | Deliverable | Milestones |
+| --- | --- | --- | --- | --- |
+| S01 | Pull requests and the project chat | Every milestone | Plan, review records, merged pull request | MIL-001 to MIL-006 |
+| S02 | Udemy Q&A and the repository README | Once, at release | Link to the repository and run instructions | MIL-006 |
+| S03 | Repository description, topics, README, wiki | Continuous after publication | Public pages | MIL-002, MIL-006 |
+| S04 | `robots.txt` and the User-Agent string | Every request | Honest identification and a delay; no direct contact | MIL-004 |
+
+---
+
+[BC-001]: ./business-case.md
+[06512d9]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/093-assignment-custom-web-scraper/commit/06512d9089fccc9f33f90b9cdce559fe9d1d7411
