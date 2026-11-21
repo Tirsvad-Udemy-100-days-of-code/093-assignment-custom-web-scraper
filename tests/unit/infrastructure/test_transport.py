@@ -12,6 +12,8 @@ import pytest
 
 from nutrition_scraper.infrastructure.transport import TransportError, UrllibTransport
 
+OPENER = "urllib.request.OpenerDirector.open"
+
 
 class _FakeResponse:
     """!
@@ -37,9 +39,7 @@ class _FakeResponse:
 
 
 def test_get_returns_status_and_text(monkeypatch: pytest.MonkeyPatch) -> None:
-    monkeypatch.setattr(
-        "urllib.request.urlopen", lambda request, timeout: _FakeResponse(200, "blåbær".encode(), "utf-8")
-    )
+    monkeypatch.setattr(OPENER, lambda self, request, timeout: _FakeResponse(200, "blåbær".encode(), "utf-8"))
 
     response = UrllibTransport().get("https://example.test/", {"User-Agent": "test"}, 5)
 
@@ -48,7 +48,7 @@ def test_get_returns_status_and_text(monkeypatch: pytest.MonkeyPatch) -> None:
 
 def test_get_uses_the_charset_of_the_answer(monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.setattr(
-        "urllib.request.urlopen", lambda request, timeout: _FakeResponse(200, "blåbær".encode("latin-1"), "latin-1")
+        OPENER, lambda self, request, timeout: _FakeResponse(200, "blåbær".encode("latin-1"), "latin-1")
     )
 
     assert UrllibTransport().get("https://example.test/", {}, 5).body == "blåbær"
@@ -57,23 +57,23 @@ def test_get_uses_the_charset_of_the_answer(monkeypatch: pytest.MonkeyPatch) -> 
 def test_get_sends_the_given_headers(monkeypatch: pytest.MonkeyPatch) -> None:
     seen: dict[str, str] = {}
 
-    def fake_urlopen(request: object, timeout: float) -> _FakeResponse:
+    def fake_urlopen(self: object, request: object, timeout: float) -> _FakeResponse:
         seen.update(request.header_items())  # type: ignore[attr-defined]
         return _FakeResponse(200, b"ok", None)
 
-    monkeypatch.setattr("urllib.request.urlopen", fake_urlopen)
+    monkeypatch.setattr(OPENER, fake_urlopen)
     UrllibTransport().get("https://example.test/", {"User-Agent": "TestAgent/1"}, 5)
 
     assert seen["User-agent"] == "TestAgent/1"
 
 
 def test_get_returns_an_error_status_instead_of_raising(monkeypatch: pytest.MonkeyPatch) -> None:
-    def fake_urlopen(request: object, timeout: float) -> _FakeResponse:
+    def fake_urlopen(self: object, request: object, timeout: float) -> _FakeResponse:
         raise urllib.error.HTTPError(
             "https://example.test/", 404, "Not Found", email.message.Message(), io.BytesIO(b"gone")
         )
 
-    monkeypatch.setattr("urllib.request.urlopen", fake_urlopen)
+    monkeypatch.setattr(OPENER, fake_urlopen)
 
     response = UrllibTransport().get("https://example.test/", {}, 5)
 
@@ -81,10 +81,10 @@ def test_get_returns_an_error_status_instead_of_raising(monkeypatch: pytest.Monk
 
 
 def test_get_raises_transport_error_when_there_is_no_answer(monkeypatch: pytest.MonkeyPatch) -> None:
-    def fake_urlopen(request: object, timeout: float) -> _FakeResponse:
+    def fake_urlopen(self: object, request: object, timeout: float) -> _FakeResponse:
         raise urllib.error.URLError("no route")
 
-    monkeypatch.setattr("urllib.request.urlopen", fake_urlopen)
+    monkeypatch.setattr(OPENER, fake_urlopen)
 
     with pytest.raises(TransportError):
         UrllibTransport().get("https://example.test/", {}, 5)

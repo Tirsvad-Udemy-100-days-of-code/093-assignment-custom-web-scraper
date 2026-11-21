@@ -49,7 +49,15 @@ class Transport(Protocol):
 class UrllibTransport:
     """!
     @brief The real Transport, built on urllib from the standard library.
+    @details It uses an opener that knows only http and https, so an address with another scheme (file:, ftp:) can
+    never be opened, whatever the caller passes.
     """
+
+    def __init__(self) -> None:
+        """!
+        @brief Create the transport with an opener for http and https only.
+        """
+        self._opener = urllib.request.build_opener(urllib.request.HTTPHandler, urllib.request.HTTPSHandler)
 
     def get(self, url: str, headers: dict[str, str], timeout: float) -> TransportResponse:
         """!
@@ -64,7 +72,7 @@ class UrllibTransport:
             raise TransportError(f"Only http and https addresses are allowed: {url}")
         request = urllib.request.Request(url, headers=headers, method="GET")
         try:
-            with urllib.request.urlopen(request, timeout=timeout) as response:
+            with self._opener.open(request, timeout=timeout) as response:
                 return TransportResponse(response.status, self._decode(response.read(), response.headers))
         except urllib.error.HTTPError as error:
             return TransportResponse(error.code, self._decode(error.read(), error.headers))
