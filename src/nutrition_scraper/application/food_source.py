@@ -15,6 +15,13 @@ class SourceError(ValueError):
     """
 
 
+class SiteRulesError(SourceError):
+    """!
+    @brief The rules of the site (robots.txt) could not be read. The run stops, because without the rules no page may
+    be requested.
+    """
+
+
 class FoodSource(Protocol):
     """!
     @brief Where foods come from. The use case knows only this interface, so it can be tested without the network.

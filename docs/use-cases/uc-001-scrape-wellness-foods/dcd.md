@@ -11,8 +11,8 @@
 
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-11-21 | Proposed | S01 | S01 | First edition | [d5d3287] |
 | 2026-11-21 | Accepted | S01 | S01 | Accepted after review RC-017 Go; stand-in review, not independent | [d5d3287] |
+| 2026-11-21 | Accepted | S01 | S01 | Adds SiteRulesError and foods_read found while building MIL-005; review RC-020 Go, stand-in, not independent | [83847b9] |
 
 ---
 
@@ -31,8 +31,8 @@ hide empty members
 
 package "presentation (Delivery)" #FADADD {
   class main_module <<module>> {
-    + main(argv : list[str] | None) : int
-    - build_source(delay : float) : FoodSource
+    + main(argv : list[str] | None, source : FoodSource | None) : int
+    + build_source(delay_seconds : float) : FoodSource
   }
 }
 package "application" #FFF3B0 {
@@ -43,11 +43,13 @@ package "application" #FFF3B0 {
   class ScrapeResult <<dataclass>> {
     + foods : list[Food]
     + skipped : list[str]
+    + foods_read : int
   }
   class scrape_foods_module <<module>> {
     + scrape_foods(source : FoodSource, rankings : tuple, foods_per_ranking : int) : ScrapeResult
   }
   class SourceError <<exception>>
+  class SiteRulesError <<exception>>
 }
 package "infrastructure" #D4E4F7 {
   interface Transport <<Protocol>> {
@@ -105,6 +107,8 @@ main_module ..> csv_writer
 scrape_foods_module "1" --> "1" FoodSource : source
 scrape_foods_module ..> wellness
 scrape_foods_module ..> ScrapeResult : creates
+SiteRulesError --|> SourceError
+PoliteWebClient ..> SiteRulesError : raises when robots.txt cannot be read
 NutritionValueSource ..|> FoodSource
 NutritionValueSource "1" o--> "1" PoliteWebClient : _client
 NutritionValueSource ..> ranking_parser
@@ -143,7 +147,9 @@ csv_writer ..> Food
 - Every constant lives in `constants.py` (delay, User-Agent, thresholds, ranking
   pages, CSV columns).
 - Exceptions: `SourceError` (application) is raised by the source for a refused,
-  failed or empty page; it extends `ValueError`.
+  failed or empty page and ends only that page; it extends `ValueError`.
+  `SiteRulesError` extends `SourceError` and is raised when `robots.txt` cannot
+  be read; `scrape_foods` does not catch it, so the run stops (UC-001 2a).
 
 ---
 
@@ -155,3 +161,4 @@ csv_writer ..> Food
 [ADR-0002]: ../../adr/adr-0002-wellness-thresholds.md
 [DCD-002]: ../../dcd.md
 [d5d3287]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/093-assignment-custom-web-scraper/commit/d5d328712110d0af9ce8e36a84913faaf3e35d0b
+[83847b9]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/093-assignment-custom-web-scraper/commit/83847b9092ab5c692b6ab3a3c1c243038e0207a3

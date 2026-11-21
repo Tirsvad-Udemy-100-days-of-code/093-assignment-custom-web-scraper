@@ -140,6 +140,7 @@ Melayu, and a [reflection journal](docs/reflection.md).
 | 2 | MIL-002 Scaffold | `pyproject.toml`, `constants.py`, smoke test, `.gitignore`, `.editorconfig`, `Doxyfile`, this README | [02-scaffold-tests.png](docs/images/02-scaffold-tests.png) | [Step 2](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/093-assignment-custom-web-scraper/wiki/Step-2-Scaffold) |
 | 3 | MIL-003 Design | Use case UC-001, two ADRs, domain model, system sequence diagram, operation contract, sequence diagram, design class diagram | [03-design-use-case.png](docs/images/03-design-use-case.png) | [Step 3](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/093-assignment-custom-web-scraper/wiki/Step-3-Design) |
 | 4 | MIL-004 Scraper | `PoliteWebClient`, `parse_ranking_page`, `parse_food_page` and their unit tests | [04-scraper-tests.png](docs/images/04-scraper-tests.png) | [Step 4](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/093-assignment-custom-web-scraper/wiki/Step-4-Scraper) |
+| 5 | MIL-005 Wellness CSV | Wellness rules, `scrape_foods`, `save_to_csv`, the command line and their tests | [05-wellness-csv-run.png](docs/images/05-wellness-csv-run.png) | [Step 5](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/093-assignment-custom-web-scraper/wiki/Step-5-Wellness-CSV) |
 
 Step 1, the Project Plan with six milestones:
 
@@ -156,6 +157,10 @@ Step 3, use case UC-001:
 Step 4, scraper tests with 99 % coverage:
 
 ![Step 4: Scraper tests with 99 % coverage](docs/images/04-scraper-tests.png)
+
+Step 5, a run of the scraper that writes the CSV:
+
+![Step 5: A run of the scraper that writes the CSV](docs/images/05-wellness-csv-run.png)
 <!-- steps:end -->
 
 ## 📄 License
