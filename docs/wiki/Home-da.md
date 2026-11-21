@@ -9,3 +9,4 @@ Dag 93-opgaven fra kurset *100 Days of Code: The Complete Python Pro Bootcamp*. 
 | [Installation](Install-da) | Oprette et `.venv`, køre skraberen og dens tests |
 | [Trin 1: Grundlag](Step-1-Baseline-da) | Hvad dette byggetrin gjorde, og hvad det lærte os, med et skærmbillede |
 | [Trin 2: Skelet](Step-2-Scaffold-da) | Hvad dette byggetrin gjorde, og hvad det lærte os, med et skærmbillede |
+| [Trin 3: Design](Step-3-Design-da) | Hvad dette byggetrin gjorde, og hvad det lærte os, med et skærmbillede |
