@@ -1,0 +1,7 @@
+User-agent: *
+Crawl-delay: 1
+Disallow: /login.php
+Disallow: /diary.php
+
+User-agent: SomeOtherBot
+Disallow: /
